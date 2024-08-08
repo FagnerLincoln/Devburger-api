@@ -8,12 +8,12 @@ const routes = new Router()
 routes.get('/', async (request, response) =>{
 const user = await User.create({
     id: v4(),
-    name: 'Fagner',
+    name: 'Lincoln',
     email: 'faglincojesus@gmail.com',
     password_hash: 'asdfjkl'
 });
 
- return response.status(201).json(User);
+ return response.status(201).json(user);
 
 });
 
