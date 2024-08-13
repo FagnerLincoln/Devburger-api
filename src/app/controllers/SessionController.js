@@ -3,18 +3,19 @@ import User from '../models/User';
 
 class SessionController {
     async store(request, response) {
+       
             const schema = Yup.object({
             email: Yup.string().email().required(),
             password: Yup.string().min(6).required(),
-
-        });
+                });
+                
         const isValid = await schema.isValid(request.body);
 
         const emailOrPasswordIncorrect = () => 
-            response
+           response
                 .status(401)
                 .json({ error: "Make Sore your email or password are correct" });
-        
+            
 
         if (!isValid) {
             return emailOrPasswordIncorrect();
@@ -37,14 +38,14 @@ class SessionController {
         if (!isSomePassword) {
             return emailOrPasswordIncorrect();
         }
-
+      
         return response.status(201).json({
             id: user.id,
             name: user.name,
             email,
             admin: user.admin,
-        });
-
+             });
+         
     }
 }
 export default new SessionController();

@@ -12,7 +12,6 @@ class UserController {
         });
 
         try {
-
             schema.validateSync(request.body, { abortEarly: false });
         } catch (err) {
             return response.status(400).json({ error: err.errors });
@@ -23,7 +22,7 @@ class UserController {
         const userExists = await User.findOne({
 where: {
     email,
-}
+},
 })
 
 if (userExists){
@@ -38,7 +37,6 @@ return response.status(400).json({error: 'User already exists'});
         });
 
         return response.status(201).json({
-
             id: user.id,
             name,
             email,
