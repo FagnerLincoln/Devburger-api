@@ -38,7 +38,7 @@ class ProductController {
                 }
             ]
         });
-    return response.json(products);
+    return response.json(products,);
     }
 }
 
