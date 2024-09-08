@@ -25,4 +25,5 @@ class Database {
             'mongodb://localhost:27017/devburger');
     }
 }
+
 export default new Database();
