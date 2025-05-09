@@ -9,10 +9,10 @@ const calculateOrderAmount = (items) => {
     const total = items.reduce((acc, current) => {
         return current.price * current.quantity + acc;
     }, 0);
-    return total * 100;
+    return total;
 }
 
-class CreatPaymentIntentController {
+class CreatePaymentIntentController {
     async store(request, response) {
         const schema = Yup.object({
             products: Yup.array().required().of(
@@ -51,4 +51,4 @@ class CreatPaymentIntentController {
 
 }
 
-export default new CreatPaymentIntentController();
+export default new CreatePaymentIntentController();

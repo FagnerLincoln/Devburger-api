@@ -9,7 +9,7 @@ import SessionController from './app/controllers/SessionController';
 import ProductController from './app/controllers/ProductController';
 import CategoryController from './app/controllers/CategoryController';
 import OrderController from './app/controllers/OrderController';
-import CreatPaymentIntentController from './app/controllers/stripe/CreatPaymentIntentController'
+import CreatePaymentIntentController from './app/controllers/stripe/CreatePaymentIntentController'
  
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -31,7 +31,7 @@ routes.post('/orders', OrderController.store);
 routes.put('/orders/:id', OrderController.update);
 routes.get('/orders', OrderController.index);
 
-routes.post("/creat-payment-intent", CreatPaymentIntentController.store);
+routes.post("/create-payment-intent", CreatePaymentIntentController.store);
 
 
 export default routes;
